@@ -1,0 +1,31 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Juego2D.com.mycompany.primerjuego2d.main;
+
+import Juego2D.Objects.*;
+
+/**
+ *
+ * @author pablo
+ */
+public class AssetObject {
+    
+    GamePanel gp; 
+    
+    public AssetObject(GamePanel gp){
+        this.gp = gp; 
+    }
+    
+    public void setObject(){
+        
+        gp.object[1] = new OBJ_Pokeball(); 
+        gp.object[2] = new OBJ_Key(); 
+        gp.object[3] = new OBJ_MTHp(); 
+        gp.object[4] = new OBJ_MTAttack(); 
+        gp.object[5] = new OBJ_Nadar(); 
+        
+    }
+    
+}
