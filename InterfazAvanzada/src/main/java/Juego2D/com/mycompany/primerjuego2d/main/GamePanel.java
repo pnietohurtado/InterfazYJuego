@@ -13,6 +13,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import Juego2D.tile.TileManager;
+import com.mycompany.interfazavanzada.Interfaz;
 
 /**
  *
@@ -71,6 +72,9 @@ public class GamePanel extends JPanel implements Runnable{
     public int ruta01[] = new int[6]; 
     
     // ------------------- Variables generales (NO TOCAR) ----------------------
+    
+    // Interfaces 
+    Interfaz inter = new Interfaz(); 
     
     // Variables para el inventario 
     public boolean showInventory = false; 

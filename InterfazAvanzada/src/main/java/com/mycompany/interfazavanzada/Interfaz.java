@@ -4,6 +4,9 @@
  */
 package com.mycompany.interfazavanzada;
 
+import Juego2D.com.mycompany.primerjuego2d.main.GamePanel; 
+import Juego2D.com.mycompany.primerjuego2d.main.Sound;
+
 /**
  *
  * @author pablo
@@ -13,8 +16,12 @@ public class Interfaz extends javax.swing.JFrame {
     /**
      * Creates new form Interfaz
      */
+    public Sound sonido = new Sound();
+    
     public Interfaz() {
         initComponents();
+        sonido.play(1,false, "effect"); // Para poder poner la música 
+        
     }
 
     /**
