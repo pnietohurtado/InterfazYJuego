@@ -20,9 +20,11 @@ public class Interfaz extends javax.swing.JFrame {
     public Sound sonido = new Sound();
     
     private CardLayout cardLayout; 
+    private GamePanel gp;
     
     public Interfaz() {
         initComponents();
+        gp = new GamePanel(); 
         this.setLocationRelativeTo(null);
         jPanel1.setFocusable(true);
         configurarCardLayout(); 
@@ -30,11 +32,14 @@ public class Interfaz extends javax.swing.JFrame {
         
     }
 
+    
+    
     private void configurarCardLayout(){
         cardLayout = (CardLayout) jPanel1.getLayout(); 
-        GamePanel gp = new GamePanel(); 
+        
         jPanel1.add(gp, "Juego"); 
         gp.startGameThread(); 
+        gp.requestFocusInWindow();
     }
     
     
@@ -161,6 +166,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //jPanel1.setFocusable(true); 
         cardLayout.show(jPanel1, "Juego");
+        gp.requestFocusInWindow();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
