@@ -6,6 +6,7 @@ package com.mycompany.interfazavanzada;
 
 import Juego2D.com.mycompany.primerjuego2d.main.GamePanel; 
 import Juego2D.com.mycompany.primerjuego2d.main.Sound;
+import java.awt.CardLayout;
 
 /**
  *
@@ -18,14 +19,25 @@ public class Interfaz extends javax.swing.JFrame {
      */
     public Sound sonido = new Sound();
     
+    private CardLayout cardLayout; 
+    
     public Interfaz() {
         initComponents();
         this.setLocationRelativeTo(null);
         jPanel1.setFocusable(true);
+        configurarCardLayout(); 
         sonido.play(1,false, "effect"); // Para poder poner la música 
         
     }
 
+    private void configurarCardLayout(){
+        cardLayout = (CardLayout) jPanel6.getLayout(); 
+        GamePanel gp = new GamePanel(); 
+        jPanel1.add(gp, "Juego"); 
+        gp.startGameThread(); 
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,6 +60,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,15 +131,28 @@ public class Interfaz extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2);
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jButton1)
+                .addContainerGap(445, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 198, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(120, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(55, 55, 55))
         );
 
         jPanel1.add(jPanel3);
@@ -159,6 +185,12 @@ public class Interfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        cardLayout.show(jPanel1, "Juego");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,6 +228,7 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
