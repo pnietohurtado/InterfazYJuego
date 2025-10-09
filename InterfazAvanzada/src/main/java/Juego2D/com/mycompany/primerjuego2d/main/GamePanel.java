@@ -73,8 +73,6 @@ public class GamePanel extends JPanel implements Runnable{
     
     // ------------------- Variables generales (NO TOCAR) ----------------------
     
-    // Interfaces 
-    Interfaz inter = new Interfaz(); 
     
     // Variables para el inventario 
     public boolean showInventory = false; 
@@ -156,6 +154,7 @@ public class GamePanel extends JPanel implements Runnable{
         this.addKeyListener(keyHandler);
         this.addMouseListener(mClicker);
         this.setFocusable(true);
+        this.requestFocusInWindow();
     }
     
     
