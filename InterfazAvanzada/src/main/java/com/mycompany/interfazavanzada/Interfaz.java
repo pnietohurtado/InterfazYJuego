@@ -28,7 +28,7 @@ public class Interfaz extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         jPanel1.setFocusable(true);
         configurarCardLayout(); 
-        sonido.play(1,false, "effect"); // Para poder poner la música 
+        //sonido.play(1,false, "effect"); // Para poder poner la música 
         
     }
 
@@ -164,9 +164,9 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //jPanel1.setFocusable(true); 
-        cardLayout.show(jPanel1, "Juego");
-        gp.requestFocusInWindow();
+        
+        Pantalla_Juego pantalla_juego = new Pantalla_Juego(); 
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
